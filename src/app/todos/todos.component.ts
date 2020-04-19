@@ -9,6 +9,7 @@ import {delay} from 'rxjs/operators';
 })
 export class TodosComponent implements OnInit {
   public loading = true;
+  public searchString = '';
 
   constructor(public todosService: TodosService) {
   }
@@ -17,8 +18,8 @@ export class TodosComponent implements OnInit {
     this.todosService.fetchTodos()
       .pipe(delay(500))
       .subscribe(() => {
-      this.loading = false;
-    });
+        this.loading = false;
+      });
   }
 
   onChange(id: number) {

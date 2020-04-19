@@ -5,16 +5,20 @@ import {AppComponent} from './app.component';
 import {TodosComponent} from './todos/todos.component';
 import { HttpClientModule} from '@angular/common/http';
 import { TodoFormComponent } from './todo-form/todo-form.component';
+import {FormsModule} from '@angular/forms';
+import {TodosFilterPipe} from './shared/todosFilter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
-    TodoFormComponent
+    TodoFormComponent,
+    TodosFilterPipe
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
